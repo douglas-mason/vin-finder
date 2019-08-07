@@ -25,17 +25,10 @@ export const Landing = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
   const onTrellisSuccess = async (accountId: string) => {
-    // due to some apparent async work that happens on the trellis backend
-    // when utilizing the demo insurance provider I was receiving messages
-    // saying policies not ready.
-    // I would not normally resort to using setTimeout as a bandaid solution
-    // but for the purposes of this demo I decided this was the most efficient
-    setTimeout(async () => {
-      const policies = await getPoliciesByAccountId(accountId);
-      const allAccountVehicles = getAllVehiclesFromPolicies(policies);
-      setVehicles(allAccountVehicles);
-      setShowResults(true);
-    }, 1000);
+    const policies = await getPoliciesByAccountId(accountId);
+    const allAccountVehicles = getAllVehiclesFromPolicies(policies);
+    setVehicles(allAccountVehicles);
+    setShowResults(true);
   };
 
   const onTrellisFail = () => {

@@ -14,4 +14,15 @@ export const centerClass = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  flexDirection: 'column',
+});
+
+export const headerContainerClass = css({
+  backgroundColor: '#aba8cf',
+  color: '#ffffff',
+});
+
+export const footerContainerClass = css({
+  backgroundColor: '#aba8cf',
+  color: '#ffffff',
 });

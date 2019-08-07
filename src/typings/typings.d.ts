@@ -5,7 +5,7 @@ declare type TrellisHandler = {
 declare type TrellisConfigOptions = {
   client_id: string;
 
-  onSuccess?: () => void;
+  onSuccess?: (accountId: string) => void;
 
   onFailure?: () => void;
 
